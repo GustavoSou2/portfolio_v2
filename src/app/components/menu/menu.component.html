@@ -1,0 +1,21 @@
+<section id="app-menu" class="column">
+    <nav class="app-menu-header center">
+        <span class="logo">GS</span>
+        <ul class="menu">
+            <li class="menu-item" (click)="link('/home')">Inicio</li>
+            <li class="menu-item" (click)="link('/about')">Sobre Mim</li>
+            <li class="menu-item" (click)="link('/projects')">Projetos</li>
+            <li class="menu-item" (click)="link('/contact')">Contato</li>
+            <li class="menu-item" (click)="link('/blog')">blog</li>
+        </ul>
+        <div class="social-medias center-y">
+            <icon [fontAwesome]="'fab fa-github'" size="xl"></icon>
+            <icon [fontAwesome]="'fa-regular fa-envelope'" size="xl"></icon>
+            <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl"></icon>
+        </div>
+    </nav>
+    <section class="app-menu-content">
+        <ng-content select="[pageOutlet]"></ng-content>
+    </section>
+    <ng-content select="[footer]"></ng-content>
+</section>

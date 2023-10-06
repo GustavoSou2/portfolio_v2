@@ -1,0 +1,43 @@
+@import "/src/assets/scss/variables.global";
+
+#app-menu {
+    width: 100%;
+    height: 100vh;
+
+    .app-menu-header {
+        height: 70px;
+        border-bottom: 1px solid #d9d9d9;
+        justify-content: space-around;
+
+        span.logo {
+            color: $primary;
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        ul.menu {
+            display: flex;
+            gap: 45px;
+
+            li.menu-item {
+                color: #{$secondary}80;
+                padding: 0.7rem 0.5rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 300ms ease-in-out;
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+
+        .social-medias {
+            gap: 10px;
+        }
+    }
+    .app-menu-content {
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "/src/assets/scss/global.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: 0 none;
+    box-shadow: 0 0 0 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+}

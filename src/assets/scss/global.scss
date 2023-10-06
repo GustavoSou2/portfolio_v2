@@ -1,0 +1,31 @@
+@import "/src/assets/scss/variables.global";
+@import "/src/assets/scss/fonts.global";
+@import "/src/assets/scss/minxis.global";
+
+// components
+@import "/src/assets/scss/components/button/button.mixins.scss";
+@import "/src/assets/scss/components/button/button.global.scss";
+
+.column {
+    @include display(column);
+}
+
+.row {
+    @include display(row);
+}
+
+.center {
+    @include display();
+    justify-content: center;
+    align-items: center;
+}
+
+.center-y {
+    @include display();
+    align-items: center;
+}
+
+.center-x {
+    @include display();
+    justify-content: center;
+}

@@ -1,0 +1,23 @@
+@import "/src/assets/scss/variables.global";
+
+$sizes: (sm: 16px, md: 24px, lg: 32px, xl: 40px, xxl: 48px);
+
+@each $key, $size in $sizes {
+    .#{$key} {
+        width: $size;
+        height: $size;
+    }
+}
+
+#icon {
+    display: flex;
+    color: #{$secondary}80;
+    border-radius: 25%;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        color: $secondary;
+        background-color: #{$secondary}20;
+    }
+}

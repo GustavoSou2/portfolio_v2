@@ -1,0 +1,24 @@
+$basic: #f1f2f6;
+$primary: #4b7bec;
+$secondary: #2f3542;
+
+$colors: (
+    basic: $basic,
+    primary: $primary,
+    secondary: $secondary,
+);
+
+$sizes: (
+  sm: 30px,
+  md: 35px,
+  lg: 40px,
+  xl: 45px,
+);
+
+$sizesToRounded: (
+  sm: 4px,
+  md: 8px,
+  lg: 12px,
+  xl: 18px,
+  xxl: 24px,
+);

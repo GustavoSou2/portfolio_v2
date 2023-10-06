@@ -1,0 +1,21 @@
+@each $key, $color in $colors {
+  .button-#{$key} {
+    background-color: $color !important;
+
+    @if ($key == "primary" or $key == "secondary") {
+      color: $basic;
+    } @else {
+      color: #000;
+    }
+
+    &:hover {
+      background-color: #{$color}90 !important;
+    }
+  }
+}
+
+@each $key, $size in $sizesToRounded {
+  .button-#{$key}-rounded {
+    border-radius: $size !important;
+  }
+}

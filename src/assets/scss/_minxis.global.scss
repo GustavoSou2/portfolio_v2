@@ -1,0 +1,4 @@
+@mixin display($direction: false) {
+    display: flex;
+    @if $direction {flex-direction: $direction;}
+}

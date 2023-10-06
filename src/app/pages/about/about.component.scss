@@ -1,0 +1,81 @@
+@import "/src/assets/scss/variables.global";
+
+#about {
+    width: 100%;
+    height: calc(100vh - 70px);
+    position: relative;
+
+    .about-presentation {
+        width: 70%;
+        height: 100%;
+        padding: 10rem 0 0;
+        margin: auto;
+
+        .title {
+            font-size: 4rem;
+            color: #ccf381;
+            text-shadow: rgb(87, 95, 207) -3px 4px 0px, rgb(87, 95, 207) -1px 1px 0px, rgb(87, 95, 207) 1px -1px 0px, rgb(87, 95, 207) 1px 0px 0px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: flex-end;
+
+            .about-presentation-point {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(87, 95, 207);
+                margin: 12px 5px;
+            }
+        }
+
+        .about-presentation-line {
+            width: 136px;
+            height: 4px;
+            background-color: rgb(87, 95, 207);
+            margin: 40px 0;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #30285e;
+            letter-spacing: 1.3px;
+
+            .about-text-griff {
+                color: $primary;
+                font-weight: bold;
+                border-bottom: 2px solid $primary;
+            }
+        }
+    }
+
+    
+
+    .about-scroll-interation {
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-family: 'Inter', sans-serif;
+
+        & .scroll-letter {
+            display: inline-block;
+            transform-origin: 50% 50%;
+            animation: wave 4500ms infinite steps(2);
+            animation-timing-function: linear;
+
+           
+        }
+    }
+
+    @keyframes wave {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+}
