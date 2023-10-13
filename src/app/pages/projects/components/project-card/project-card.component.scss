@@ -1,0 +1,40 @@
+@import "/src/assets/scss/variables.global";
+
+#project-card {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    border: 1px solid #efefef;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+    transition: 300ms ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+
+    .project-card-shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, transparent 0%,  #000 90%);
+    }
+
+    .project-card-detail {
+        z-index: 3;
+        padding: 1rem;
+
+        p.title {
+            color: $basic;
+            font-size: 1.3rem;
+        }
+
+        p.description {
+            color: #{$basic}95;
+            font-size: 0.8rem;
+        }
+    }
+}
