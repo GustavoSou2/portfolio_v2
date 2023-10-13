@@ -1,6 +1,69 @@
 <section id="projects" class="column">
-    <app-title title="Projetos" fontSize="2.5rem"></app-title>
-    <div class="projects-cards" *ngIf="projects$ | async as projects" [@itemByItemAnimation]="projects.length">
-        <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
+  <app-title title="Projetos" fontSize="2.5rem"></app-title>
+  <div
+    class="projects-cards"
+    *ngIf="projects$ | async as projects"
+    [@itemByItemAnimation]="projects.length"
+  >
+    <app-project-card
+      *ngFor="let project of projects"
+      [project]="project"
+      (click)="projectToDetail = project"
+    ></app-project-card>
+  </div>
+
+  <ng-container
+    *ngIf="projectToDetail$ | async as projectDetail; then project"
+  ></ng-container>
+
+  <ng-template #project let-project>
+    <div id="project-detail">
+      <div class="back-drop" (click)="closeProjectToDetail()"></div>
+      <div class="detail column">
+        <div
+          class="detail-header"
+          [@topAnimation]
+          [style.background-image]="'url(' + project.image + ')'"
+        ></div>
+        <div class="detail-body ">
+          <div class="detail-body-descriptions">
+            <app-title
+              [title]="project.title"
+              fontSize="1.2rem"
+              [delay]="300"
+            ></app-title>
+
+            <p
+              class="description"
+              [@topAnimation]="{ value: '', params: { delay: 400 } }"
+            >
+              {{ project.description }}
+            </p>
+          </div>
+          <div
+            class="detail-body-group-buttons"
+            [@topAnimation]="{ value: '', params: { delay: 500 } }"
+          >
+            <button class="button button-basic" (click)="closeProjectToDetail()">Fechar</button>
+            <div class="buttons-project">
+              <icon
+                [fontAwesome]="'fab fa-github'"
+                size="xxl"
+                [theme]="theme"
+                *ngIf="!!project.links && !!project.links.github"
+                (click)="navigateTo(project.links.github)"
+              ></icon>
+              <icon
+                [fontAwesome]="'fa-solid fa-link'"
+                size="xxl"
+                [theme]="theme"
+                *ngIf="!!project.links && !!project.links.demo"
+                (click)="navigateTo(project.links.demo)"
+              ></icon>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </ng-template>
 </section>

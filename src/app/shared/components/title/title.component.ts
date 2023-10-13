@@ -21,4 +21,5 @@ export class TitleComponent {
     'font-size': '24px',
   }
 
+  @Input() delay: number = 0;
 }

@@ -1,9 +1,24 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeModeService {
+  _theme: BehaviorSubject<'light' | 'dark'> = new BehaviorSubject<'light' | 'dark'>('dark');
+
+  set theme(theme: 'light' | 'dark') {
+    this._theme.next(theme);
+  }
+
+  get theme() {
+    return this._theme.getValue();
+  }
+
+  get theme$() {
+    return this._theme.asObservable();
+  }
+
   isDarkMode() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
@@ -13,7 +28,8 @@ export class ThemeModeService {
   setThemeMode(theme: 'light' | 'dark' = this.isDarkMode() ? 'dark' : 'light') {
     const isDarkMode = theme;
 
-    console.log(theme)
+    this.theme = theme;
+
     if (isDarkMode === 'dark') {
       window.document.documentElement.style.setProperty('--basic', '#2f3542');
       window.document.documentElement.style.setProperty('--secondary', '#ced6e0');
