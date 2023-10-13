@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects.component';
 import { RouterModule, Routes } from '@angular/router';
+import { TitleModule } from 'src/app/shared/components/title/title.module';
+import { ProjectCardModule } from './components/project-card/project-card.module';
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    TitleModule,
+    ProjectCardModule
   ],
   exports: [ProjectsComponent]
 })

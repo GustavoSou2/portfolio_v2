@@ -1,0 +1,40 @@
+@mixin desktop() {
+    .home-presentation {
+        width: 70%;
+        height: 100%;
+        background-size: 120%;
+        background-position: center -5vh;
+        animation: backgroundSlade 0.6s ease-in-out;
+        animation-fill-mode: forwards;
+        margin: 0 auto;
+        position: relative;
+
+        .home-presentation-iam {
+            width: 30vw;
+            min-width: 585px;
+            height: 50vh;
+
+            .home-button {
+                width: 60%;
+                margin-top: 30px;
+                padding: 0.7rem 3.5rem !important;
+                background: linear-gradient(45deg, #4b7bec, #5758BB) ;
+                transition: 300ms ease-in;
+
+                &:hover {
+                    background-color: #3970ff !important;
+                }
+            }
+        }
+
+        .home-img {
+            width: 47vh;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            right: 4%;
+        }
+
+
+    }
+}

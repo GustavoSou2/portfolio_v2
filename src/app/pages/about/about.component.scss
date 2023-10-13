@@ -2,19 +2,22 @@
 
 #about {
     width: 100%;
-    height: calc(100vh - 70px);
     position: relative;
 
     .about-presentation {
-        width: 70%;
+        width: 100%;
         height: 100%;
-        padding: 10rem 0 0;
-        margin: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
 
         .title {
             font-size: 4rem;
-            color: #ccf381;
-            text-shadow: rgb(87, 95, 207) -3px 4px 0px, rgb(87, 95, 207) -1px 1px 0px, rgb(87, 95, 207) 1px -1px 0px, rgb(87, 95, 207) 1px 0px 0px;
+            background: linear-gradient(45deg, #5758BB, #4b7bec, #2196f3);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
             text-transform: uppercase;

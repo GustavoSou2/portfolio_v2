@@ -1,10 +1,24 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { BehaviorSubject } from 'rxjs';
+import { StyleCustomType } from '../../utils/types/style-custom.type';
 
-export type StryleCustomType = {
-  [klass: string]: any;
-} | null | undefined
+export const FloatStyle = {
+  left: {
+    'display': 'flex',
+    'justify-content': 'flex-start',
+  },
+  center: {
+    'display': 'flex',
+    'justify-content': 'center',
+    'text-align': 'center',
+
+  },
+  right: {
+    'display': 'flex',
+    'justify-content': 'flex-end',
+  }
+}
 
 @Component({
   selector: 'typing-animation',
@@ -25,7 +39,7 @@ export type StryleCustomType = {
 export class TypingAnimationComponent implements OnInit {
   @Input({ required: true }) phrase: string = '';
 
-  @Input() styleCustom: StryleCustomType = {
+  @Input() styleCustom: StyleCustomType = {
     'font-size': '24px',
     'display': 'inline-block',
   };
@@ -33,6 +47,13 @@ export class TypingAnimationComponent implements OnInit {
   @Input() delay: number = 0;
 
   @Input() speed: number = 100;
+
+  @Input() set float(float:'left' | 'center' | 'right') {
+    this.styleCustom = {
+      ...this.styleCustom,
+      ...FloatStyle[float]
+    };
+  }
 
   @Output() finishAnimation = new EventEmitter<boolean>(true);
 

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 const yourWelcomeCustom = {
-  'font-size': '2.8rem', 
+  'font-size': '2.4rem', 
   'color': '#ccf381', 
   'text-shadow': 'rgb(87, 95, 207) -3px 4px 0px, rgb(87, 95, 207) -1px 1px 0px, rgb(87, 95, 207) 1px -1px 0px, rgb(87, 95, 207) 1px 0px 0px' ,
   'font-family': "'Montserrat', sans-serif", 
@@ -10,7 +10,7 @@ const yourWelcomeCustom = {
 }
 
 const nameStyleCustom = {
-  'font-size': '4rem',
+  'font-size': '4.5rem',
   'font-weight': '700',
   'text-transform': 'uppercase',
   'font-family': "'Inter', sans-serif", 
@@ -22,7 +22,7 @@ const nameStyleCustom = {
 }
 
 const descriptionStyleCustom = {
-  'font-size': '1.6rem',
+  'font-size': '1.2rem',
   'font-family': "'Raleway', sans-serif", 
   'color': '#2f354250',
   'margin': '0 24px'
@@ -31,7 +31,7 @@ const descriptionStyleCustom = {
 const buttonAnimation = trigger('buttonAnimation', [
   state('false', style({
     opacity: 0,
-    transform: 'translateX(-20px)'
+    transform: 'translateY(20px)'
   })),
   state('true', style({
     opacity: 1,

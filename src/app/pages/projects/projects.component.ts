@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { of } from 'rxjs';
+import { projects } from './fake.db';
 
 @Component({
   selector: 'app-projects',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-
+  
+  
+  projects$ = of(projects)
 }

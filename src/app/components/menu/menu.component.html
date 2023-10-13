@@ -1,8 +1,8 @@
 <section id="app-menu" class="column">
-    <nav class="app-menu-header center">
+    <nav class="app-menu-header center" [ngClass]="{ 'activated': menuActivity }">
         <span class="logo">GS</span>
-        <ul class="menu">
-            <li class="menu-item" (click)="link('/home')">Inicio</li>
+        <ul class="menu" [ngClass]="{ 'activated': menuActivity }"  >
+            <li class="menu-item"  (click)="link('/home')">Inicio</li>
             <li class="menu-item" (click)="link('/about')">Sobre Mim</li>
             <li class="menu-item" (click)="link('/projects')">Projetos</li>
             <li class="menu-item" (click)="link('/contact')">Contato</li>
@@ -12,6 +12,11 @@
             <icon [fontAwesome]="'fab fa-github'" size="xl"></icon>
             <icon [fontAwesome]="'fa-regular fa-envelope'" size="xl"></icon>
             <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl"></icon>
+        </div>
+        <div class="mobile-menu-icon--container" [ngClass]="{ 'activated': menuActivity }" (click)="menuActivity = !menuActivity">
+            <div class="menu-icon--line"></div>
+            <div class="menu-icon--line"></div>
+            <div class="menu-icon--line"></div>
         </div>
     </nav>
     <section class="app-menu-content">

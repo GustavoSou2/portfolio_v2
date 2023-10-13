@@ -1,0 +1,136 @@
+@mixin menu-mobile {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1.7rem;
+
+  .menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    transition: 300ms ease-in;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+    .menu-item {
+      color: $basic;
+      font-size: 2rem;
+      font-family: "Inter", sans-serif;
+      letter-spacing: 0.1rem;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+    }
+  }
+
+  .mobile-menu-icon--container {
+    display: none;
+  }
+
+  .social-medias {
+    display: none;
+  }
+
+  &.activated {
+    .menu {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: $purple;
+      padding: 1rem;
+      z-index: 5;
+      padding: 100px 1.7rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .logo {
+      z-index: 6;
+      color: $basic;
+    }
+
+    .mobile-menu-icon--container {
+      z-index: 5;
+      cursor: pointer;
+  
+      .menu-icon--line {
+        background-color: $basic;
+      }
+    }
+
+    .social-medias {
+      position: fixed;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      z-index: 5;
+    }
+  }
+
+  .mobile-menu-icon--container {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+
+    .menu-icon--line {
+      height: 3px;
+      border-radius: 5px;
+      background-color: $primary;
+      transition: 1000ms ease-in-out;
+      position: absolute;
+
+      &:nth-child(1) {
+        width: 50%;
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        width: 75%;
+        bottom: 0;
+      }
+    }
+
+    &.activated {
+      .menu-icon--line {
+        &:nth-child(1) {
+          width: 100%;
+          top: 50%;
+          transform: rotate(45deg);
+          transition: 300ms ease-in-out;
+          transition-delay: 15 0ms;
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          transform: rotate(135deg);
+          transition: 300ms ease-in-out;
+          transition-delay: 110ms;
+        }
+
+        &:nth-child(3) {
+          width: 0%;
+          bottom: 0;
+          transition: 200ms ease-in-out;
+        }
+      }
+    }
+  }
+
+}
