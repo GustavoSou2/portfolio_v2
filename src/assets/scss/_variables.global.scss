@@ -6,9 +6,11 @@
   --primary: #4b7bec;
   --secondary: #2f3542;
   --purple: #5758BB;
+  --basic: #f1f2f6;
 }
 
 $basic: #f1f2f6;
+$basic-theme: var(--basic);
 $primary: var(--primary);
 $secondary: var(--secondary);
 $purple: var(--purple);

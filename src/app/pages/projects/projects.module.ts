@@ -4,6 +4,7 @@ import { ProjectsComponent } from './projects.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TitleModule } from 'src/app/shared/components/title/title.module';
 import { ProjectCardModule } from './components/project-card/project-card.module';
+import { IconModule } from 'src/app/shared/components/icon/icon.module';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     TitleModule,
-    ProjectCardModule
+    ProjectCardModule,
+    IconModule
   ],
   exports: [ProjectsComponent]
 })

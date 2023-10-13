@@ -1,13 +1,138 @@
-#projects {
-    width: 100%;
-    height: 100%;
-    padding: 2rem 1rem;
+@import "/src/assets/scss/variables.global";
 
-    .projects-cards {
-        width: 100%;
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 10px;
+#projects {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+
+  .projects-cards {
+    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+  }
+
+  #project-detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+
+    .back-drop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #39393930;
+      background: rgba(0, 0, 0, 0.19);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(9.9px);
+      -webkit-backdrop-filter: blur(9.9px);
+      z-index: 4;
+      animation: fadeIn 300ms ease-in-out;
     }
+
+    .detail {
+      width: 100%;
+      height: 50%;
+      margin: 0 auto;
+      background-color: $basic-theme;
+      z-index: 5;
+      animation: slateToTop 300ms ease-in-out;
+      overflow: hidden;
+      padding: 1.5rem;
+      gap: 20px;
+      justify-content: space-between;
+
+      .detail-header {
+        width: 100%;
+        height: 190px;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 6px;
+      }
+
+      .detail-body {
+        display: flex;
+        height: calc(100% - 190px);
+        flex-direction: column;
+        justify-content: space-between;
+
+        .description {
+            color: $secondary;
+        }
+
+        .detail-body-group-buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .buttons-project {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+      }
+    }
+
+    &.on-close {
+      .back-drop {
+        animation: fadeOut 300ms ease-in-out;
+      }
+
+      .detail {
+        animation: slateToDown 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slateToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(125px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slateToDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(125px);
+  }
 }
