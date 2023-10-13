@@ -24,7 +24,7 @@ const nameStyleCustom = {
 const descriptionStyleCustom = {
   'font-size': '1.2rem',
   'font-family': "'Raleway', sans-serif", 
-  'color': '#2f354250',
+  'color': 'var(--secondary)',
   'margin': '0 24px'
 }
 

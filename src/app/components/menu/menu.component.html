@@ -13,10 +13,17 @@
             <icon [fontAwesome]="'fa-regular fa-envelope'" size="xl"></icon>
             <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl"></icon>
         </div>
-        <div class="mobile-menu-icon--container" [ngClass]="{ 'activated': menuActivity }" (click)="menuActivity = !menuActivity">
-            <div class="menu-icon--line"></div>
-            <div class="menu-icon--line"></div>
-            <div class="menu-icon--line"></div>
+        <div class="menu-options--group">
+            <div class="menu-icon-theme" (click)="theme = !theme; changeTheme()">
+                <icon [fontAwesome]="'fa-regular fa-sun'" size="xxl" [theme]="theme ? 'light' : 'dark'" *ngIf="_theme === 'dark'" ></icon>
+                <icon [fontAwesome]="'fa-regular fa-moon'" size="xxl" [theme]="!theme ? 'dark' : 'light'" *ngIf="_theme === 'light'"  ></icon>    
+            </div>
+            
+            <div class="mobile-menu-icon--container" [ngClass]="{ 'activated': menuActivity }" (click)="menuActivity = !menuActivity">
+                <div class="menu-icon--line"></div>
+                <div class="menu-icon--line"></div>
+                <div class="menu-icon--line"></div>
+            </div>
         </div>
     </nav>
     <section class="app-menu-content">

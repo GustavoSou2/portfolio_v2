@@ -1,4 +1,4 @@
-import { animate, sequence, style, transition, trigger } from "@angular/animations";
+import { animate, query, sequence, stagger, style, transition, trigger } from "@angular/animations";
 
 export const topAnimation = trigger('topAnimation', [
     transition(':enter', [
@@ -17,3 +17,18 @@ export const topAnimation = trigger('topAnimation', [
       ])
     ], { params: { delay: 0 } }),
   ])
+
+  export const itemByItemAnimation = trigger('itemByItemAnimation', [
+    transition('* => *', [
+      query(
+        ':enter',
+        [
+          style({ opacity: 0, transform: 'translateX(-50px)' }),
+          stagger(100, [
+            animate('300ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+          ]),
+        ],
+        { optional: true }
+      ),
+    ]),
+  ]);

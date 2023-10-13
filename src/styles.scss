@@ -12,3 +12,8 @@
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
 }
+
+body {
+    background-color: var(--basic);
+    transition: 300ms ease-in;
+}

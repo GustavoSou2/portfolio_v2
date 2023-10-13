@@ -1,7 +1,17 @@
+:root {
+  --primary-bg-dark: #333333;
+  --primary-text-dark: #ffffff;
+  --primary-bg-light: #ffffff;
+  --primary-text-light: #333333;
+  --primary: #4b7bec;
+  --secondary: #2f3542;
+  --purple: #5758BB;
+}
+
 $basic: #f1f2f6;
-$primary: #4b7bec;
-$secondary: #2f3542;
-$purple: #5758BB;
+$primary: var(--primary);
+$secondary: var(--secondary);
+$purple: var(--purple);
 
 $colors: (
     basic: $basic,

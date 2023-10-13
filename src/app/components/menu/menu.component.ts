@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, query, stagger,transition, style, animate, state, group } from '@angular/animations';
+import { ThemeModeService } from 'src/app/shared/utils/services/theme-mode/theme-mode.service';
 
 export const slideTo = trigger('slideTo', [
   transition('* => *', [
@@ -17,12 +18,11 @@ export const slideTo = trigger('slideTo', [
   ]),
 ]);
 
-export const menuTo = trigger('menuTo', [
-  state('enter', style({ opacity: 1 })),
-  state('leave', style({ opacity: 0 })),
-  transition('enter => leave', group([ style({ opacity: 0 }) ,animate('400ms ease-in-out')])),
-  transition('leave => enter', animate('400ms ease-in-out')),
-]);
+export const menuTo =  trigger('fadeInOut', [
+  state('void', style({ opacity: 0 })),
+  state('*', style({ opacity: 1 })),
+  transition('void <=> *', animate('300ms {{ delay }}ms ease-in'), { params: { delay: 0 } }),
+])
 
 @Component({
   selector: 'menu',
@@ -31,13 +31,28 @@ export const menuTo = trigger('menuTo', [
   animations: [slideTo, menuTo]
 })
 export class MenuComponent {
+
+  set theme(bool: boolean) {
+    this._theme = bool ? 'dark' : 'light';
+  }
+
+  get theme() {
+    return this._theme === 'dark' ? true : false;
+  }
+
+  _theme: 'light' | 'dark' = 'dark';
+
   menuActivity: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private themeModeService: ThemeModeService) {}
 
   link(path: string) {
     this.menuActivity = false;
     this.router.navigate([path]);
+  }
+
+  changeTheme() {
+    this.themeModeService.setThemeMode(this._theme);
   }
 
 }
