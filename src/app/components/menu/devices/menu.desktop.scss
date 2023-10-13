@@ -1,0 +1,24 @@
+@mixin menu-desktop {
+  justify-content: space-around;
+
+  ul.menu {
+    display: flex;
+    gap: 45px;
+
+    li.menu-item {
+      color: #{$secondary}80;
+      padding: 0.7rem 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  .social-medias {
+    gap: 10px;
+  }
+}

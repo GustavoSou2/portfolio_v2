@@ -11,4 +11,6 @@ export class IconComponent {
   @Input({ required: true }) fontAwesome!: string;
   
   @Input() size: IconSizeType = 'md';
+
+  @Input() theme: 'light' | 'dark' = 'light';
 }

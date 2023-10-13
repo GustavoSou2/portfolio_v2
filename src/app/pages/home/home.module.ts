@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { TypingAnimationModule } from 'src/app/components/typing-animation/typing-animation.module';
+import { TypingAnimationModule } from 'src/app/shared/components/typing-animation/typing-animation.module';
+import { IconModule } from 'src/app/shared/components/icon/icon.module';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    TypingAnimationModule
+    TypingAnimationModule,
+    IconModule
   ],
   exports: [HomeComponent]
 })

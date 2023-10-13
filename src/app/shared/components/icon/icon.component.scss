@@ -16,8 +16,26 @@ $sizes: (sm: 16px, md: 24px, lg: 32px, xl: 40px, xxl: 48px);
     transition: 300ms ease-in-out;
     cursor: pointer;
 
+    &.theme-light {
+        color: #{$basic}80;
+    }
+
+    &.theme-dark {
+        color: #{$secondary}80;
+    }
+
     &:hover {
         color: $secondary;
         background-color: #{$secondary}20;
+
+        &.theme-light {
+            color: #{$basic}80;
+            background-color: #{$basic}20;
+        }
+    
+        &.theme-dark {
+            color: #{$secondary}80;
+            background-color: #{$secondary}20;
+        }
     }
 }

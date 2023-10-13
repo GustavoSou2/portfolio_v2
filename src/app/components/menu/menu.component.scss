@@ -1,43 +1,36 @@
 @import "/src/assets/scss/variables.global";
 
+// Devices
+@import "./devices/menu.mobile.scss";
+@import "./devices/menu.desktop.scss";
+
 #app-menu {
     width: 100%;
     height: 100vh;
 
     .app-menu-header {
         height: 70px;
-        border-bottom: 1px solid #d9d9d9;
-        justify-content: space-around;
+        border-bottom: 1px solid #d9d9d9; 
 
         span.logo {
             color: $primary;
             font-weight: bold;
             font-size: 1.5rem;
-            font-family: 'Raleway', sans-serif;
+            font-family: "Raleway", sans-serif;
+            z-index: 5;
         }
 
-        ul.menu {
-            display: flex;
-            gap: 45px;
-
-            li.menu-item {
-                color: #{$secondary}80;
-                padding: 0.7rem 0.5rem;
-                font-weight: bold;
-                cursor: pointer;
-                transition: 300ms ease-in-out;
-
-                &:hover {
-                    color: $secondary;
-                }
-            }
+        @media screen and (max-width: 600px) {
+            @include menu-mobile;
         }
 
-        .social-medias {
-            gap: 10px;
+        @media screen and (min-width: 944px) {
+            @include menu-desktop;
         }
     }
+    
     .app-menu-content {
+        height: calc(100vh - 70px);
         overflow-y: auto;
     }
 }

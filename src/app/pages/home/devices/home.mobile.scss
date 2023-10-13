@@ -1,0 +1,19 @@
+
+@mixin mobile() {
+
+    .home-img, #avatar-shapes {
+        display: none;
+    }
+
+    .home-presentation-iam {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        z-index: 3;
+
+        .home-button {
+            width: 60%;
+            margin: 2rem auto 0;
+        }
+    }
+}
