@@ -11,7 +11,7 @@ $sizes: (sm: 16px, md: 24px, lg: 32px, xl: 40px, xxl: 48px);
 
 #icon {
     display: flex;
-    color: #{$secondary}80;
+    color: #2f354280;
     border-radius: 25%;
     transition: 300ms ease-in-out;
     cursor: pointer;
@@ -21,7 +21,7 @@ $sizes: (sm: 16px, md: 24px, lg: 32px, xl: 40px, xxl: 48px);
     }
 
     &.theme-dark {
-        color: #{$secondary}80;
+        color: #2f354280;
     }
 
     &:hover {

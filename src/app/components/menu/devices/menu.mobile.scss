@@ -30,6 +30,14 @@
     display: none;
   }
 
+  .menu-options--group {
+    width: max-content;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  
+  }
+
   .social-medias {
     display: none;
   }
