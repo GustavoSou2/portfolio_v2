@@ -79,6 +79,8 @@
       transform: translateX(-50%);
       display: flex;
       z-index: 5;
+      gap: 7px;
+      animation: fade-in 0.9s ease-in;
     }
   }
 
@@ -141,4 +143,13 @@
     }
   }
 
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

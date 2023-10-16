@@ -1,6 +1,39 @@
-<section id="contact">
-    <div class="column center-y">
-        <img src="assets/images/building.gif" alt="">
-        <p>Em Desenvolvimento</p>
-    </div>
+<section id="contact" class="column">
+  <app-title title="Contato" fontSize="2.7rem"></app-title>
+
+  <form [formGroup]="contact" class="column" [@itemByItemAnimation]="3">
+    <app-input
+      formControlName="name"
+      id="name"
+      name="name"
+      label="Nome"
+      [theme]="theme"
+      autocomplete="off"
+    ></app-input>
+    <app-input
+      formControlName="email"
+      [id]="'email'"
+      [name]="'email'"
+      [label]="'Email'"
+      [theme]="theme"
+      type="email"
+      autocomplete="off"
+    ></app-input>
+    <app-input
+      formControlName="message"
+      id="message"
+      name="message"
+      label="Mensagem"
+      [theme]="theme"
+      type="textarea"
+      autocomplete="off"
+    ></app-input>
+
+    <button class="button button-primary" [disabled]="!contact.valid" *ngIf="!!contact">Enviar</button>
+  </form>
+  <div class="contact-options" [@topAnimation]="{ value: '', params: { delay: 300 } }">
+    <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl" [theme]="theme" (click)="to('https://www.linkedin.com/in/gustavo-antonio-souza/')"></icon>
+    <icon [fontAwesome]="'fa-brands fa-instagram'" size="xl" [theme]="theme" (click)="to('https://www.instagram.com/gustavosouzadev_ofc/')"></icon>
+    <icon [fontAwesome]="'fa-brands fa-whatsapp'" size="xl" [theme]="theme" (click)="to(' https://api.whatsapp.com/send?phone=5519995324162&text=Seja%20bem-vindo%20%F0%9F%91%8B.%0AEm%20que%20posso%20te%20ajudar?')"></icon>
+  </div>
 </section>

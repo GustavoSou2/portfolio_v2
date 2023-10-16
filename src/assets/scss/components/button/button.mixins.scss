@@ -1,6 +1,7 @@
 @each $key, $color in $colors {
   .button-#{$key} {
     background-color: $color !important;
+    transition: 300ms ease-in;
 
     @if ($key == "primary" or $key == "secondary") {
       color: $basic;
@@ -8,8 +9,8 @@
       color: #000;
     }
 
-    &:hover {
-      background-color: #{$color}90 !important;
+    &:disabled {
+      filter: grayscale(75%);
     }
   }
 }

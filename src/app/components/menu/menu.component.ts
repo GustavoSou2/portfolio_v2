@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, query, stagger,transition, style, animate, state, group } from '@angular/animations';
 import { ThemeModeService } from 'src/app/shared/utils/services/theme-mode/theme-mode.service';
+import { topAnimation } from 'src/app/shared/animations/animations.global';
 
 export const slideTo = trigger('slideTo', [
   transition('* => *', [
@@ -28,7 +29,7 @@ export const menuTo =  trigger('fadeInOut', [
   selector: 'menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  animations: [slideTo, menuTo]
+  animations: [slideTo, menuTo, topAnimation]
 })
 export class MenuComponent {
 
