@@ -1,0 +1,81 @@
+@import "/src/assets/scss/variables.global";
+
+#input {
+    width: 100%;
+    height: 45px;
+    border-radius: 6px;
+    margin: 0 0 0 ;
+    display: flex;
+    align-items: center;
+    padding: 0.35rem 0.8rem ;
+    position: relative;
+    background-color: #ffffff05;
+    border: 2px solid transparent;
+    transition: 300ms ease-in-out;
+
+    &::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 0.9rem;
+        transition: 100ms ease-in-out;
+        z-index: 2;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+    }
+
+    input, textarea {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 3;
+        color: #fff;
+    }
+
+    &.textarea {
+        height: 300px;
+        display: flex;
+        align-items: start;
+        color: #fff;
+        padding: 0.45rem 0.8rem ;
+        
+        &::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 3%;
+            top: 20px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: 100ms ease-in-out;
+            z-index: 2;
+        }
+
+        input {
+            height: max-content;
+            
+        }
+    }
+
+    &.on-focus {
+        border: 2px solid #ffffff10;
+
+        &::before {
+            font-size: 0.75rem;
+            transform: translateY(-30px);
+        }
+    }
+   
+    &.light {
+        background-color: #2f354215;
+
+        &::before, input, textarea {
+            color: #2f3542;
+        }
+    }
+
+    
+    
+}
