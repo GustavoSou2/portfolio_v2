@@ -1,0 +1,39 @@
+<label
+  [for]="id"
+  *ngIf="type !== 'textarea'; else textarea"
+  id="input"
+  [class]="theme + ' ' + type"
+  [ngClass]="{ 'on-focus': focus || (!!value && value.length !== 0) }"
+  [attr.data-label]="label"
+>
+  <input
+    [type]="type"
+    [(ngModel)]="value"
+    (ngModelChange)="writeValue($event)"
+    [id]="id"
+    [name]="name"
+    (focus)="focus = true"
+    (blur)="focus = false"
+    [autocomplete]="autocomplete"
+  />
+</label>
+
+<ng-template #textarea>
+  <label
+    [for]="id"
+    id="input"
+    [class]="theme + ' textarea ' + type"
+    [ngClass]="{ 'on-focus': focus || (!!value && value.length !== 0) }"
+    [attr.data-label]="label"
+  >
+    <textarea
+      [(ngModel)]="value"
+      (ngModelChange)="writeValue($event)"
+      [name]="name"
+      [id]="id"
+      (focus)="focus = true"
+      (blur)="focus = false"
+      [autocomplete]="autocomplete"
+    ></textarea>
+  </label>
+</ng-template>
