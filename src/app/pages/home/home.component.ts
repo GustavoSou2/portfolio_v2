@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 const yourWelcomeCustom = {
   'font-size': '2.4rem', 
@@ -53,4 +54,9 @@ export class HomeComponent {
 
   showButton: boolean = false;
 
+  constructor(private router: Router) {}
+
+  to(link: string) {
+    this.router.navigate([link]);
+  }
 }

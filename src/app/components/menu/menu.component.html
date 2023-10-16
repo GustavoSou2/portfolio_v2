@@ -6,17 +6,17 @@
             <li class="menu-item" (click)="link('/about')">Sobre Mim</li>
             <li class="menu-item" (click)="link('/projects')">Projetos</li>
             <li class="menu-item" (click)="link('/contact')">Contato</li>
-            <li class="menu-item" (click)="link('/blog')">blog</li>
+            
         </ul>
         <div class="social-medias center-y">
-            <icon [fontAwesome]="'fab fa-github'" size="xl"></icon>
-            <icon [fontAwesome]="'fa-regular fa-envelope'" size="xl"></icon>
-            <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl"></icon>
+            <icon [fontAwesome]="'fab fa-github'" size="xl" (click)="link('https://github.com/GustavoSou2')"></icon>
+            <icon [fontAwesome]="'fa-regular fa-envelope'" size="xl" (click)="link('/contact')"></icon>
+            <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl" (click)="link('https://www.linkedin.com/in/gustavo-antonio-souza/')"></icon>
         </div>
         <div class="menu-options--group">
             <div class="menu-icon-theme" (click)="theme = !theme; changeTheme()">
-                <icon [fontAwesome]="'fa-regular fa-sun'" size="xxl" [theme]="theme ? 'light' : 'dark'" *ngIf="_theme === 'dark'" ></icon>
-                <icon [fontAwesome]="'fa-regular fa-moon'" size="xxl" [theme]="!theme ? 'dark' : 'light'" *ngIf="_theme === 'light'"  ></icon>    
+                <icon [fontAwesome]="'fa-regular fa-sun'" size="xxl" [theme]="theme ? 'dark' : 'light'" *ngIf="_theme === 'dark'" ></icon>
+                <icon [fontAwesome]="'fa-regular fa-moon'" size="xxl" [theme]="!theme ? 'light' : 'dark'" *ngIf="_theme === 'light'"  ></icon>    
             </div>
             
             <div class="mobile-menu-icon--container" [ngClass]="{ 'activated': menuActivity }" (click)="menuActivity = !menuActivity">

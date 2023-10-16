@@ -1,11 +1,26 @@
 #contact {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 1rem;
 
-    img {
-        width: 90%;
-        margin: 5% 0 0;
+    form {
+        width: 100%;
+        margin: 1.75rem auto;
+        gap: 15px;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: #ffffff15;
+        display: block;
+    }
+
+    .contact-options {
+        width: max-content;
+        display: flex;
+        margin: 15px auto;
+        position: relative;
+        gap: 7px;
+
     }
 }

@@ -30,8 +30,7 @@ export class ProjectsComponent {
   constructor(private themeModeService: ThemeModeService, private router: Router) {
 
     this.themeModeService.theme$.subscribe((theme) => {
-      this.theme = theme === 'light' ? 'dark' : 'light';
-      console.log(theme);
+      this.theme = theme;
     });
   }
 
