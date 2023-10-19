@@ -1,5 +1,9 @@
 @import "/src/assets/scss/variables.global";
 
+@import "./devices/projects.desktop.scss";
+
+@import "./devices/projects.mobile.scss";
+
 #projects {
   width: 100%;
   height: 100%;
@@ -9,7 +13,7 @@
     width: 100%;
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 360px));
     gap: 10px;
   }
 
@@ -21,7 +25,6 @@
     height: 100vh;
     z-index: 2;
     display: flex;
-    align-items: flex-end;
 
     .back-drop {
       position: absolute;
@@ -40,9 +43,6 @@
     }
 
     .detail {
-      width: 100%;
-      height: 70%;
-      margin: 0 auto;
       background-color: $basic-theme;
       z-index: 5;
       animation: slateToTop 300ms ease-in-out;
@@ -68,20 +68,20 @@
         justify-content: space-between;
 
         .description {
-            color: $secondary;
+          color: $secondary;
         }
 
         .detail-body-group-buttons {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-            .buttons-project {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-            }
+          .buttons-project {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+          }
         }
       }
     }
@@ -93,6 +93,35 @@
 
       .detail {
         animation: slateToDown 300ms ease-in-out;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      @include mobile;
+
+      .detail {
+        animation: slateToTop 300ms ease-in-out;
+      }
+
+
+      &.on-close {
+        .detail {
+          animation: slateToDown 300ms ease-in-out;
+        }
+      }
+    }
+
+    @media screen and (min-width: 944px) {
+      @include desktop;
+
+      .detail {
+        animation: slateToLeft 300ms ease-in-out;
+      }
+
+      &.on-close {
+        .detail {
+          animation: slateToRight 300ms ease-in-out;
+        }
       }
     }
   }
@@ -126,6 +155,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes slateToDown {
   0% {
     opacity: 1;
@@ -134,5 +164,27 @@
   100% {
     opacity: 0;
     transform: translateY(125px);
+  }
+}
+
+@keyframes slateToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(125px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slateToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(125px);
   }
 }

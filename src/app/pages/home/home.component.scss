@@ -1,20 +1,20 @@
-@import "./devices/home.mobile.scss";
-    
-@import "./devices/home.desktop.scss";
-
 #home {
     width: 100%;
     height: calc(100vh - 70px);
 
-    
-    @media screen and (max-width: 944px) {
-        @include mobile;
+    .home-presentation-iam {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        z-index: 3;
+
+        .home-button {
+            width: 60%;
+            max-width: 130px;
+            margin: 2rem auto 0;
+        }
     }
 
-    @media screen and (min-width: 944px) {
-        @include desktop;
-    }
-    
     @keyframes backgroundSlade {
         0% {
             opacity: 0;

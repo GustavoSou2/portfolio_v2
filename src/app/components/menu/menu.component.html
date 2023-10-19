@@ -2,27 +2,29 @@
     <nav class="app-menu-header center" [ngClass]="{ 'activated': menuActivity }">
         <span class="logo">GS</span>
         <ul class="menu" [ngClass]="{ 'activated': menuActivity }"  >
-            <li class="menu-item"  (click)="link('/home')">Inicio</li>
-            <li class="menu-item" (click)="link('/about')">Sobre Mim</li>
-            <li class="menu-item" (click)="link('/projects')">Projetos</li>
-            <li class="menu-item" (click)="link('/contact')">Contato</li>
+            <li class="menu-item"  (click)="link('/home')" [style]="theme ? 'color: #f1f2f680;' : 'color: #2f354280;'">Inicio</li>
+            <li class="menu-item" (click)="link('/about')" [style]="theme ? 'color: #f1f2f680;' : 'color: #2f354280;'">Sobre Mim</li>
+            <li class="menu-item" (click)="link('/projects')" [style]="theme ? 'color: #f1f2f680;' : 'color: #2f354280;'">Projetos</li>
+            <li class="menu-item" (click)="link('/contact')" [style]="theme ? 'color: #f1f2f680;' : 'color: #2f354280;'">Contato</li>
             
         </ul>
-        <div class="social-medias center-y">
-            <icon [fontAwesome]="'fab fa-github'" size="xl" (click)="link('https://github.com/GustavoSou2')"></icon>
-            <icon [fontAwesome]="'fa-regular fa-envelope'" size="xl" (click)="link('/contact')"></icon>
-            <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl" (click)="link('https://www.linkedin.com/in/gustavo-antonio-souza/')"></icon>
-        </div>
-        <div class="menu-options--group">
-            <div class="menu-icon-theme" (click)="theme = !theme; changeTheme()">
-                <icon [fontAwesome]="'fa-regular fa-sun'" size="xxl" [theme]="theme ? 'dark' : 'light'" *ngIf="_theme === 'dark'" ></icon>
-                <icon [fontAwesome]="'fa-regular fa-moon'" size="xxl" [theme]="!theme ? 'light' : 'dark'" *ngIf="_theme === 'light'"  ></icon>    
+        <div class="row icons-groups">
+            <div class="social-medias center-y">
+                <icon [fontAwesome]="'fab fa-github'" [theme]="theme ? 'dark' : 'light'" size="xl" (click)="link('https://github.com/GustavoSou2')"></icon>
+                <icon [fontAwesome]="'fa-regular fa-envelope'" [theme]="theme ? 'dark' : 'light'" size="xl" (click)="link('/contact')"></icon>
+                <icon [fontAwesome]="'fa-brands fa-linkedin-in'" size="xl" [theme]="theme ? 'dark' : 'light'" (click)="link('https://www.linkedin.com/in/gustavo-antonio-souza/')"></icon>
             </div>
-            
-            <div class="mobile-menu-icon--container" [ngClass]="{ 'activated': menuActivity }" (click)="menuActivity = !menuActivity">
-                <div class="menu-icon--line"></div>
-                <div class="menu-icon--line"></div>
-                <div class="menu-icon--line"></div>
+            <div class="menu-options--group">
+                <div class="menu-icon-theme" (click)="theme = !theme; changeTheme()">
+                    <icon [fontAwesome]="'fa-regular fa-sun'" size="xxl" [theme]="theme ? 'dark' : 'light'" *ngIf="_theme === 'dark'" ></icon>
+                    <icon [fontAwesome]="'fa-regular fa-moon'" size="xxl" [theme]="!theme ? 'light' : 'dark'" *ngIf="_theme === 'light'"  ></icon>    
+                </div>
+                
+                <div class="mobile-menu-icon--container" [ngClass]="{ 'activated': menuActivity }" (click)="menuActivity = !menuActivity">
+                    <div class="menu-icon--line"></div>
+                    <div class="menu-icon--line"></div>
+                    <div class="menu-icon--line"></div>
+                </div>
             </div>
         </div>
     </nav>

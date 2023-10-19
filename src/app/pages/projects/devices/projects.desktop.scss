@@ -1,0 +1,8 @@
+@mixin desktop() {
+    justify-content: flex-end;
+
+    .detail {
+        width: 40%;
+        height: 100%;
+    }
+}

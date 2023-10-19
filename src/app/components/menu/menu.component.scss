@@ -27,6 +27,11 @@
         @media screen and (min-width: 944px) {
             @include menu-desktop;
         }
+
+        .icons-groups {
+            display: flex;
+            gap: 10px;
+        }
     }
     
     .app-menu-content {
