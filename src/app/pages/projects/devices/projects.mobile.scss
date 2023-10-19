@@ -1,0 +1,9 @@
+@mixin mobile() {
+    align-items: flex-end;
+
+    .detail {
+        width: 100%;
+        height: 70%;
+    }
+
+}
